@@ -12,8 +12,8 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 /**
- * »ç¿ëÀÚ °ü¸®¿¡¼­ µ¥ÀÌÅÍº£ÀÌ½º¿ÍÀÇ ÀÛ¾÷À» Àü´ãÇÏ´Â Å¬·¡½º.
- * UserInfo Å×ÀÌºí¿¡ »ç¿ëÀÚ¸¦ Ãß°¡, ¼öÁ¤, »èÁ¦, °Ë»öµîÀÇ ÀÛ¾÷À» ÇÑ´Ù. 
+ * ì‚¬ìš©ì ê´€ë¦¬ì—ì„œ ë°ì´í„°ë² ì´ìŠ¤ì™€ì˜ ì‘ì—…ì„ ì „ë‹´í•˜ëŠ” í´ë˜ìŠ¤.
+ * UserInfo í…Œì´ë¸”ì— ì‚¬ìš©ìë¥¼ ì¶”ê°€, ìˆ˜ì •, ì‚­ì œ, ê²€ìƒ‰ë“±ì˜ ì‘ì—…ì„ í•œë‹¤. 
  */
 public class UserDAO {
 	private DataSource ds;
@@ -23,14 +23,14 @@ public class UserDAO {
 			ds = (DataSource)init.lookup("java:comp/env/jdbc/OracleDB");
 	}	
 	/**
-	 * »ç¿ëÀÚ °ü¸® Å×ÀÌºí¿¡ »õ·Î¿î »ç¿ëÀÚ »ı¼º.
+	 * ì‚¬ìš©ì ê´€ë¦¬ í…Œì´ë¸”ì— ìƒˆë¡œìš´ ì‚¬ìš©ì ìƒì„±.
 	 */
 	public int create(User user) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		try {
 			StringBuffer insertQuery = new StringBuffer();
-			insertQuery.append("INSERT INTO USERINFO (userId, name, password, email, phone) VALUES ");
+			insertQuery.append("INSERT INTO USERINFO (userId, password, name, email, phone) VALUES ");
 			insertQuery.append("(?, ?, ?, ?, ?)");		
 		
 			con = ds.getConnection();
@@ -54,7 +54,7 @@ public class UserDAO {
 	}
 
 	/**
-	 * ±âÁ¸ÀÇ »ç¿ëÀÚ »ç¿ëÀÚ Á¤º¸¸¦ ¼öÁ¤.
+	 * ê¸°ì¡´ì˜ ì‚¬ìš©ì ì‚¬ìš©ì ì •ë³´ë¥¼ ìˆ˜ì •.
 	 */
 	public int update(User user) throws SQLException {
 		Connection con = null;
@@ -86,7 +86,7 @@ public class UserDAO {
 	}
 
 	/**
-	 * »ç¿ëÀÚ ¾ÆÀÌµğ¿¡ ÇØ´çÇÏ´Â »ç¿ëÀÚ¸¦ »èÁ¦.
+	 * ì‚¬ìš©ì ì•„ì´ë””ì— í•´ë‹¹í•˜ëŠ” ì‚¬ìš©ìë¥¼ ì‚­ì œ.
 	 */
 	public int remove(String userId) throws SQLException {
 		Connection con = null;
@@ -113,8 +113,8 @@ public class UserDAO {
 	}
 
 	/**
-	 * »ç¿ëÀÚ ¾ÆÀÌµğ Á¤º¸¸¦ µ¥ÀÌÅÍº£ÀÌ½º¿¡¼­ Ã£¾Æ User µµ¸ŞÀÎ Å¬·¡½º¿¡ 
-	 * ÀúÀåÇÏ¿© ¹İÈ¯.
+	 * ì‚¬ìš©ì ì•„ì´ë”” ì •ë³´ë¥¼ ë°ì´í„°ë² ì´ìŠ¤ì—ì„œ ì°¾ì•„ User ë„ë©”ì¸ í´ë˜ìŠ¤ì— 
+	 * ì €ì¥í•˜ì—¬ ë°˜í™˜.
 	 */
 	public User findUser(String userId) throws SQLException {
 		Connection con = null;
@@ -153,9 +153,9 @@ public class UserDAO {
 	}
 
 	/**
-	 * »ç¿ëÀÚ ¸®½ºÆ®¸¦ ¸¸µé±â À§ÇÑ ºÎºĞÀ¸·Î ÇöÀç ÆäÀÌÁö¿Í 
-	 * ÆäÀÌÁö´ç Ä«¿îÆ®¼ö¸¦ ÀÌ¿ëÇÏ¿© ÇØ´çºÎºĞÀÇ »ç¿ëÀÚ¸¸À» ListÄİ·º¼Ç¿¡
-	 * ÀúÀåÇÏ¿© ¹İÈ¯.
+	 * ì‚¬ìš©ì ë¦¬ìŠ¤íŠ¸ë¥¼ ë§Œë“¤ê¸° ìœ„í•œ ë¶€ë¶„ìœ¼ë¡œ í˜„ì¬ í˜ì´ì§€ì™€ 
+	 * í˜ì´ì§€ë‹¹ ì¹´ìš´íŠ¸ìˆ˜ë¥¼ ì´ìš©í•˜ì—¬ í•´ë‹¹ë¶€ë¶„ì˜ ì‚¬ìš©ìë§Œì„ Listì½œë ‰ì…˜ì—
+	 * ì €ì¥í•˜ì—¬ ë°˜í™˜.
 	 */
 	public List<User> findUserList(int currentPage, int countPerPage)
 		throws SQLException {
@@ -201,8 +201,8 @@ public class UserDAO {
 	}
 
 	/**
-	 * ÀÎÀÚ·Î Àü´ŞµÇ´Â ¾ÆÀÌµğ¸¦ °¡Áö´Â »ç¿ëÀÚ°¡ Á¸ÀçÇÏ´ÂÁöÀÇ 
-	 * À¯¹«¸¦ ÆÇº°. 
+	 * ì¸ìë¡œ ì „ë‹¬ë˜ëŠ” ì•„ì´ë””ë¥¼ ê°€ì§€ëŠ” ì‚¬ìš©ìê°€ ì¡´ì¬í•˜ëŠ”ì§€ì˜ 
+	 * ìœ ë¬´ë¥¼ íŒë³„. 
 	 */
 	public boolean existedUser(String userId) throws SQLException {
 		Connection con = null;
