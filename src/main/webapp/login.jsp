@@ -1,8 +1,8 @@
-<%@page contentType="text/html; charset=euc-kr" %>
+<%@page contentType="text/html; charset=utf-8" %>
 <html>
 <head>
-<title>»ç¿ëÀÚ °ü¸®(UserMan1)</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>ì‚¬ìš©ì ê´€ë¦¬(UserMan1)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel=stylesheet href="${pageContext.request.contextPath}/css/user.css" type="text/css">
 <script>
 function userCreate() {
@@ -12,12 +12,12 @@ function userCreate() {
 
 function login() {
 	if ( f.userId.value == "" ) {
-		alert("»ç¿ëÀÚ ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿ä.");
+		alert("ì‚¬ìš©ì ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì‹­ì‹œìš”.");
 		f.userId.focus();
 		return false;
 	} 
 	if ( f.password.value == "" ) {
-		alert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿ä.");
+		alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì‹­ì‹œìš”.");
 		f.password.focus();
 		return false;
 	}	
@@ -39,19 +39,19 @@ function login() {
 	  <b>UserMan1</b><br><br>
 	  <table>
 		  <tr>
-			<td class="title">&nbsp;&nbsp;»ç¿ëÀÚ °ü¸® - ·Î±×ÀÎ&nbsp;&nbsp;</td>
+			<td class="title">&nbsp;&nbsp;ì‚¬ìš©ì ê´€ë¦¬ - ë¡œê·¸ì¸&nbsp;&nbsp;</td>
 		  </tr>
 	  </table>  
 	  <br>
 	  <table style="background-color: YellowGreen">
 	  	  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">»ç¿ëÀÚ ¾ÆÀÌµğ</td>
+			<td width="150" align="center" bgcolor="E6ECDE">ì‚¬ìš©ì ì•„ì´ë””</td>
 			<td width="250" bgcolor="ffffff" style="padding-left:10">
 				<input type="text" style="width:240" name="userId">
 			</td>
 		  </tr>
 	  	  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">ºñ¹Ğ¹øÈ£</td>
+			<td width="150" align="center" bgcolor="E6ECDE">ë¹„ë°€ë²ˆí˜¸</td>
 			<td width="250" bgcolor="ffffff" style="padding-left:10">
 				<input type="password" style="width:240" name="password">
 			</td>
@@ -62,11 +62,11 @@ function login() {
 	  <table style="width:100%">
 		  <tr>
 			<td align="left">
-			<input type="button" value="·Î±×ÀÎ" onClick="login()"> &nbsp;
-			<input type="button" value="È¸¿ø°¡ÀÔ" onClick="userCreate()">
+			<input type="button" value="ë¡œê·¸ì¸" onClick="login()"> &nbsp;
+			<input type="button" value="íšŒì›ê°€ì…" onClick="userCreate()">
 			</td>
 		  </tr>
-		  <tr height="40"><td>(°ü¸®ÀÚ ·Î±×ÀÎ: admin/admin)</td></tr>		  
+		  <tr height="40"><td>(ê´€ë¦¬ì ë¡œê·¸ì¸: admin/admin)</td></tr>		  
 	  </table>
 
 	  </td>

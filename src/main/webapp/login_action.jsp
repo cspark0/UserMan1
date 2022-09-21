@@ -1,4 +1,4 @@
-<%@page contentType="text/html; charset=euc-kr" %>
+<%@page contentType="text/html; charset=utf-8" %>
 <%@page import="user.*" %>
 
 <jsp:useBean id="user" class="user.User"/>		       
@@ -10,20 +10,20 @@ try {
 //	String userId = request.getParameter("userId");
 //	String password = request.getParameter("password");
 	
-	//¸ðµ¨¿¡ ·Î±×ÀÎ ÀÛ¾÷À» À§ÀÓÇÑ´Ù.
+	//ëª¨ë¸ì— ë¡œê·¸ì¸ ìž‘ì—…ì„ ìœ„ìž„í•œë‹¤.
 	UserManager manager = UserManager.getInstance();
-	manager.login(user.getUserId(), user.getPassword());	// manager °´Ã¼ È£Ãâ
+	manager.login(user.getUserId(), user.getPassword());	// manager ê°ì²´ í˜¸ì¶œ
 //	manager.login(userId, password);
 
-	//Á¤»óÀûÀ¸·Î ·Î±×ÀÎ µÇ¾úÀ» °æ¿ì ¼¼¼Ç¿¡ »ç¿ëÀÚ ¾ÆÀÌµð ÀúÀå.
+	//ì •ìƒì ìœ¼ë¡œ ë¡œê·¸ì¸ ë˜ì—ˆì„ ê²½ìš° ì„¸ì…˜ì— ì‚¬ìš©ìž ì•„ì´ë”” ì €ìž¥.
 	session.setAttribute("userId", user.getUserId());
 
-	//¸ðµç ÀÛ¾÷ ¿Ï·áÈÄ ÀÌµ¿ÇÒ ÆäÀÌÁö¸¦ °áÁ¤.
+	//ëª¨ë“  ìž‘ì—… ì™„ë£Œí›„ ì´ë™í•  íŽ˜ì´ì§€ë¥¼ ê²°ì •.
 	response.sendRedirect("user_list.jsp");
 } catch (Exception e) {
 %>
 <!--
-¿¡·¯°¡ ¹ß»ýÇÒ °æ¿ì alert Ã¢À» ¶ç¿ì°í ÀÌÀü ÆäÀÌÁö·Î ÀÌµ¿.
+ì—ëŸ¬ê°€ ë°œìƒí•  ê²½ìš° alert ì°½ì„ ë„ìš°ê³  ì´ì „ íŽ˜ì´ì§€ë¡œ ì´ë™.
 -->
 <script>
 alert("<%= e.getMessage() %>");

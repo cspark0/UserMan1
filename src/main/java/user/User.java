@@ -1,7 +1,7 @@
 package user;
 
 /**
- * »ç¿ëÀÚ °ü¸®¸¦ À§ÇØ ÇÊ¿äÇÑ µµ¸ŞÀÎ Å¬·¡½º. USERINFO Å×ÀÌºí°ú ´ëÀÀµÊ
+ * ì‚¬ìš©ì ê´€ë¦¬ë¥¼ ìœ„í•´ í•„ìš”í•œ ë„ë©”ì¸ í´ë˜ìŠ¤. USERINFO í…Œì´ë¸”ê³¼ ëŒ€ì‘ë¨
  */
 public class User {
 	private String userId;
@@ -60,7 +60,7 @@ public class User {
 		this.phone = phone;
 	}
 
-	/* ºñ¹Ğ¹øÈ£ °Ë»ç */
+	/* ë¹„ë°€ë²ˆí˜¸ ê²€ì‚¬ */
 	public boolean matchPassword(String password) {
 		if (password == null) {
 			return false;

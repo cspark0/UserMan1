@@ -1,4 +1,4 @@
-<%@page contentType="text/html; charset=euc-kr" %>
+<%@page contentType="text/html; charset=utf-8" %>
 <%@page import="java.util.*" %>
 <%@page import="user.*" %>
 
@@ -15,14 +15,14 @@
 	
 	int countPerPage = 10;
 
-	//¸ğµ¨À» ÀÌ¿ëÇÏ¿© »ç¿ëÀÚ ¸®½ºÆ®¸¦ °¡Á®¿Â´Ù.
+	//ëª¨ë¸ì„ ì´ìš©í•˜ì—¬ ì‚¬ìš©ì ë¦¬ìŠ¤íŠ¸ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
 	UserManager manager = UserManager.getInstance();
 	List<User> userList = manager.findUserList(currentPage, countPerPage);
 %>
 <html>
 <head>
-<title>»ç¿ëÀÚ °ü¸®</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>ì‚¬ìš©ì ê´€ë¦¬</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="css/user.css" type="text/css">
 
 </head>
@@ -32,7 +32,7 @@
 <table style="width: 100%">
   <tr>
   	<td width="20"></td>
-    <td><a href="logout_action.jsp">·Î±×¾Æ¿ô(&nbsp;<%=curUserId%>&nbsp;)</a><br/></td>
+    <td><a href="logout_action.jsp">ë¡œê·¸ì•„ì›ƒ(&nbsp;<%=curUserId%>&nbsp;)</a><br/></td>
   </tr>
   <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
   <tr>
@@ -41,7 +41,7 @@
 	  <!--contents-->
 	  <table style="width:100%">
 		<tr>
-			<td class="title">&nbsp;&nbsp;<b>»ç¿ëÀÚ °ü¸® - ¸®½ºÆ®</b></td>
+			<td class="title">&nbsp;&nbsp;<b>ì‚¬ìš©ì ê´€ë¦¬ - ë¦¬ìŠ¤íŠ¸</b></td>
 		</tr>
 	  </table>  
 	  <br>	
@@ -49,15 +49,15 @@
 	  <!-- list -->
 	  <table style="width: 100%; background-color: YellowGreen">
 		<tr>
-			<td width="190" align="center" bgcolor="E6ECDE" height="22">»ç¿ëÀÚID</td>
-			<td width="200" align="center" bgcolor="E6ECDE">ÀÌ¸§</td>
-			<td width="200" align="center" bgcolor="E6ECDE">ÀÌ¸ŞÀÏ</td>
+			<td width="190" align="center" bgcolor="E6ECDE" height="22">ì‚¬ìš©ìID</td>
+			<td width="200" align="center" bgcolor="E6ECDE">ì´ë¦„</td>
+			<td width="200" align="center" bgcolor="E6ECDE">ì´ë©”ì¼</td>
 		</tr>
 <%
 	if (userList != null) {	
 	  Iterator<User> userIter = userList.iterator();
 	
-	  //»ç¿ëÀÚ ¸®½ºÆ®¸¦ Å¬¶óÀÌ¾ğÆ®¿¡°Ô º¸¿©ÁÖ±â À§ÇÏ¿© Ãâ·Â.
+	  //ì‚¬ìš©ì ë¦¬ìŠ¤íŠ¸ë¥¼ í´ë¼ì´ì–¸íŠ¸ì—ê²Œ ë³´ì—¬ì£¼ê¸° ìœ„í•˜ì—¬ ì¶œë ¥.
 	  while ( userIter.hasNext() ) {
 		User user = (User)userIter.next();
 %>		  	
@@ -86,7 +86,7 @@
 	  <table style="width: 100%">
 		<tr>
 			<td align="left">
-				<input type="submit" value="»ç¿ëÀÚ Ãß°¡"/>
+				<input type="submit" value="ì‚¬ìš©ì ì¶”ê°€"/>
 			</td>
 		</tr>
 	  </table>		

@@ -1,4 +1,4 @@
-<%@page contentType="text/html; charset=euc-kr" %>
+<%@page contentType="text/html; charset=utf-8" %>
 <%@page import="user.*" %>
 <%@ include file="loginCheck.jsp" %>
 <%
@@ -9,8 +9,8 @@
 %>
 <html>
 <head>
-<title>»ç¿ëÀÚ °ü¸®</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>ì‚¬ìš©ì ê´€ë¦¬</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="css/user.css" type="text/css">
 <script>
 function userList() {
@@ -24,7 +24,7 @@ function userModify() {
 }
 
 function userRemove() {
-	if ( confirm("Á¤¸» »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?") ) {
+	if ( confirm("ì •ë§ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?") ) {
 		f.action = "user_remove_action.jsp";
 		f.submit();
 	}
@@ -43,32 +43,32 @@ function userRemove() {
   	    <!--contents-->
 	    <table style="width: 100%">
 		  <tr>
-			<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>»ç¿ëÀÚ °ü¸® - »ç¿ëÀÚ Á¤º¸º¸±â</b></td>
+			<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>ì‚¬ìš©ì ê´€ë¦¬ - ì‚¬ìš©ì ì •ë³´ë³´ê¸°</b></td>
 		  </tr>
 	    </table>  
 	    <br>	  
 	    
 	  	<table style="width: 100%; background-color: YellowGreen">
 	  	  <tr>
-			<td width="120" align="center" bgcolor="E6ECDE" height="22">»ç¿ëÀÚID</td>
+			<td width="120" align="center" bgcolor="E6ECDE" height="22">ì‚¬ìš©ìID</td>
 			<td width="470" bgcolor="ffffff" style="padding-left: 10">
 				<%= user.getUserId() %>
 			</td>
 		  </tr>
 		  <tr>
-			<td width="120" align="center" bgcolor="E6ECDE" height="22">ÀÌ¸§</td>
+			<td width="120" align="center" bgcolor="E6ECDE" height="22">ì´ë¦„</td>
 			<td width="470" bgcolor="ffffff" style="padding-left: 10">
 				<%= user.getName() %>
 			</td>
 		  </tr>
 		  <tr>
-			<td width="120" align="center" bgcolor="E6ECDE" height="22">ÀÌ¸ŞÀÏ ÁÖ¼Ò</td>
+			<td width="120" align="center" bgcolor="E6ECDE" height="22">ì´ë©”ì¼ ì£¼ì†Œ</td>
 			<td width="470" bgcolor="ffffff" style="padding-left: 10">
 				<%= user.getEmail() %>
 			</td>
 		  </tr>		  
 		  <tr>
-			<td width="120" align="center" bgcolor="E6ECDE" height="22">ÀüÈ­¹øÈ£</td>
+			<td width="120" align="center" bgcolor="E6ECDE" height="22">ì „í™”ë²ˆí˜¸</td>
 			<td width="470" bgcolor="ffffff" style="padding-left: 10">
 				<%= user.getPhone() %>
 			</td>
@@ -79,9 +79,9 @@ function userRemove() {
  	    <table style="width: 100%">
 		  <tr>
 			<td align="left">
-			<input type="button" value="¼öÁ¤" onClick="userModify()"> &nbsp;
-			<input type="button" value="»èÁ¦" onClick="userRemove()"> &nbsp;
-			<input type="button" value="¸ñ·Ï" onClick="userList()"> 
+			<input type="button" value="ìˆ˜ì •" onClick="userModify()"> &nbsp;
+			<input type="button" value="ì‚­ì œ" onClick="userRemove()"> &nbsp;
+			<input type="button" value="ëª©ë¡" onClick="userList()"> 
 			</td>
 		  </tr>
 	    </table>

@@ -4,11 +4,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * »ç¿ëÀÚ °ü¸® API¸¦ »ç¿ëÇÏ´Â °³¹ßÀÚµéÀÌ Á÷Á¢ Á¢±ÙÇÏ°Ô µÇ´Â Å¬·¡½º.
- * UserDAO¸¦ ÀÌ¿ëÇÏ¿© µ¥ÀÌÅÍº£ÀÌ½º¿¡ µ¥ÀÌÅÍ Á¶ÀÛ ÀÛ¾÷ÀÌ °¡´ÉÇÏµµ·Ï ÇÏ¸ç,
- * µ¥ÀÌÅÍº£ÀÌ½ºÀÇ µ¥ÀÌÅÍµéÀ» ÀÌ¿ëÇÏ¿© ºñÁö´Ï½º ·ÎÁ÷À» ¼öÇàÇÏ´Â ¿ªÇÒÀ» ÇÑ´Ù.
- * ºñÁö´Ï½º ·ÎÁ÷ÀÌ º¹ÀâÇÑ °æ¿ì¿¡´Â ºñÁö´Ï½º ·ÎÁ÷¸¸À» Àü´ãÇÏ´Â Å¬·¡½º¸¦ 
- * º°µµ·Î µÑ ¼ö ÀÖ´Ù.
+ * ì‚¬ìš©ì ê´€ë¦¬ APIë¥¼ ì œê³µí•˜ëŠ” í´ë˜ìŠ¤.
+ * UserDAOë¥¼ ì´ìš©í•˜ì—¬ DBMSì™€ ì—°ë™í•˜ê³ , ë¹„ì¦ˆë‹ˆìŠ¤ ê°ì²´ë¥¼ í˜¸ì¶œí•˜ê±°ë‚˜ ì§ì ‘ ë¹„ì¦ˆë‹ˆìŠ¤ ë¡œì§ì„ ì‹¤í–‰í•¨.
  */
 public class UserManager {
 	private static UserManager userMan = new UserManager();
@@ -20,7 +17,6 @@ public class UserManager {
 			userDAO = new UserDAO();
 			userAanlysis = new UserAnalysis(userDAO);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}			
 	}
@@ -31,7 +27,7 @@ public class UserManager {
 	
 	public int create(User user) throws SQLException, ExistedUserException {
 		if (userDAO.existedUser(user.getUserId())) {
-			throw new ExistedUserException(user.getUserId() + "´Â Á¸ÀçÇÏ´Â ¾ÆÀÌµğÀÔ´Ï´Ù.");
+			throw new ExistedUserException(user.getUserId() + "ëŠ” ì¡´ì¬í•˜ëŠ” ì•„ì´ë””ì…ë‹ˆë‹¤.");
 		}
 		return userDAO.create(user);
 	}
@@ -49,7 +45,7 @@ public class UserManager {
 		User user = userDAO.findUser(userId);
 		
 		if (user == null) {
-			throw new UserNotFoundException(userId + "´Â Á¸ÀçÇÏÁö ¾Ê´Â ¾ÆÀÌµğÀÔ´Ï´Ù.");
+			throw new UserNotFoundException(userId + "ëŠ” ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ì•„ì´ë””ì…ë‹ˆë‹¤.");
 		}		
 		return user;
 	}
@@ -64,7 +60,7 @@ public class UserManager {
 		User user = findUser(userId);
 
 		if (!user.matchPassword(password)) {
-			throw new PasswordMismatchException("ºñ¹Ğ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.");
+			throw new PasswordMismatchException("ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 		}
 		return true;
 	}

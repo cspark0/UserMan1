@@ -12,8 +12,8 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 /**
- * 사용자 관리에서 데이터베이스와의 작업을 전담하는 클래스.
- * UserInfo 테이블에 사용자를 추가, 수정, 삭제, 검색등의 작업을 한다. 
+ * DBMS와의 연동을 담당하는 클래스.
+ * JDBC API를 이용하여 USERINFO 테이블에 사용자 정보 추가, 수정, 삭제, 검색 수행 
  */
 public class UserDAO {
 	private DataSource ds;
@@ -23,7 +23,7 @@ public class UserDAO {
 			ds = (DataSource)init.lookup("java:comp/env/jdbc/OracleDB");
 	}	
 	/**
-	 * 사용자 관리 테이블에 새로운 사용자 생성.
+	 * USERINFO 테이블에 새로운 사용자 생성.
 	 */
 	public int create(User user) throws SQLException {
 		Connection con = null;
@@ -113,14 +113,14 @@ public class UserDAO {
 	}
 
 	/**
-	 * 사용자 아이디 정보를 데이터베이스에서 찾아 User 도메인 클래스에 
+	 * 주어진 아이디에 해당하는 사용자 정보를 데이터베이스에서 찾아 User 도메인 클래스에 
 	 * 저장하여 반환.
 	 */
 	public User findUser(String userId) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		try {
+		try { 
 			StringBuffer findQuery = new StringBuffer();
 			findQuery.append("SELECT password, name, email, phone ");
 			findQuery.append("FROM USERINFO ");
@@ -153,9 +153,8 @@ public class UserDAO {
 	}
 
 	/**
-	 * 사용자 리스트를 만들기 위한 부분으로 현재 페이지와 
-	 * 페이지당 카운트수를 이용하여 해당부분의 사용자만을 List콜렉션에
-	 * 저장하여 반환.
+	 * 사용자 리스트를 만들기 위한 메소드로, 현재 페이지와 
+	 * 페이지당 행의 갯수를 이용하여 해당 부분의 사용자 정보만을 List에 저장하여 반환.
 	 */
 	public List<User> findUserList(int currentPage, int countPerPage)
 		throws SQLException {
@@ -201,8 +200,7 @@ public class UserDAO {
 	}
 
 	/**
-	 * 인자로 전달되는 아이디를 가지는 사용자가 존재하는지의 
-	 * 유무를 판별. 
+	 * 인자로 전달되는 아이디를 가지는 사용자가 존재하는지 유무를 판별. 
 	 */
 	public boolean existedUser(String userId) throws SQLException {
 		Connection con = null;

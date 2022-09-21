@@ -1,23 +1,23 @@
-<%@page contentType="text/html; charset=euc-kr" %>
+<%@page contentType="text/html; charset=utf-8" %>
 <html>
 <head>
-<title>»ç¿ëÀÚ °ü¸®</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>ì‚¬ìš©ì ê´€ë¦¬</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="css/user.css" type="text/css">
 <script>
 function userCreate() {
 	if ( f.userId.value == "" ) {
-		alert("»ç¿ëÀÚ ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿ä.");
+		alert("ì‚¬ìš©ì ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì‹­ì‹œìš”.");
 		f.userId.focus();
 		return false;
 	} 
 	if ( f.password.value == "" ) {
-		alert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ½Ê½Ã¿ä.");
+		alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì‹­ì‹œìš”.");
 		f.password.focus();
 		return false;
 	}
 	if ( f.name.value == "" ) {
-		alert("ÀÌ¸§À» ÀÔ·ÂÇÏ½Ê½Ã¿ä.");
+		alert("ì´ë¦„ì„ ì…ë ¥í•˜ì‹­ì‹œìš”.");
 		f.name.focus();
 		return false;
 	}
@@ -43,44 +43,44 @@ function userList() {
       <!--contents-->
 	  <table style="width: 100%">
 		  <tr>
-			<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>»ç¿ëÀÚ °ü¸® - È¸¿ø °¡ÀÔ</b></td>
+			<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>ì‚¬ìš©ì ê´€ë¦¬ - íšŒì› ê°€ì…</b></td>
 		  </tr>
 	  </table>  
 	  <br>
 	  
 	  <table style="background-color: YellowGreen">
 	  	  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">»ç¿ëÀÚID</td>
+			<td width="150" align="center" bgcolor="E6ECDE">ì‚¬ìš©ìID</td>
 			<td width="250" bgcolor="ffffff" style="padding-left: 10">
 				<input type="text" style="width: 240;" name="userId">
 			</td>
 		  </tr>
 	  	  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">ºñ¹Ğ¹øÈ£</td>
+			<td width="150" align="center" bgcolor="E6ECDE">ë¹„ë°€ë²ˆí˜¸</td>
 			<td width="250" bgcolor="ffffff" style="padding-left: 10">
 				<input type="password" style="width: 240" name="password">
 			</td>
 		  </tr>
 	  	  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">ºñ¹Ğ¹øÈ£ È®ÀÎ</td>
+			<td width="150" align="center" bgcolor="E6ECDE">ë¹„ë°€ë²ˆí˜¸ í™•ì¸</td>
 			<td width="250" bgcolor="ffffff" style="padding-left: 10">
 				<input type="password" style="width: 240" name="password2">
 			</td>
 		  </tr>
 	  	  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">ÀÌ¸§</td>
+			<td width="150" align="center" bgcolor="E6ECDE">ì´ë¦„</td>
 			<td width="250" bgcolor="ffffff" style="padding-left: 10">
 				<input type="text" style="width: 240" name="name">
 			</td>
 		  </tr>
 	  	  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">ÀÌ¸ŞÀÏ ÁÖ¼Ò</td>
+			<td width="150" align="center" bgcolor="E6ECDE">ì´ë©”ì¼ ì£¼ì†Œ</td>
 			<td width="250" bgcolor="ffffff" style="padding-left: 10">
 				<input type="text" style="width: 240" name="email">
 			</td>
 		  </tr>	
 	  	  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">ÀüÈ­¹øÈ£</td>
+			<td width="150" align="center" bgcolor="E6ECDE">ì „í™”ë²ˆí˜¸</td>
 			<td width="250" bgcolor="ffffff" style="padding-left: 10">
 				<input type="text" style="width: 240" name="phone">
 			</td>
@@ -91,8 +91,8 @@ function userList() {
 	  <table style="width: 100%">
 		  <tr>
 			<td align="left">
-			<input type="button" value="È¸¿ø °¡ÀÔ" onClick="userCreate()"> &nbsp;
-			<input type="button" value="¸ñ·Ï" onClick="userList()">
+			<input type="button" value="íšŒì› ê°€ì…" onClick="userCreate()"> &nbsp;
+			<input type="button" value="ëª©ë¡" onClick="userList()">
 			</td>
 		  </tr>
 	  </table>

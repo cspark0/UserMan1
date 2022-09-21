@@ -1,4 +1,4 @@
-<%@page contentType="text/html; charset=euc-kr" %>
+<%@page contentType="text/html; charset=utf-8" %>
 <%@page import="user.*" %>
 <%@ include file="loginCheck.jsp" %>
 <%
@@ -9,8 +9,8 @@
 %>
 <html>
 <head>
-<title>»ç¿ëÀÚ °ü¸®</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>ì‚¬ìš©ìž ê´€ë¦¬</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="css/user.css" type="text/css">
 <script>
 function userModify() {
@@ -36,44 +36,44 @@ function userList() {
         <!--contents-->
 	    <table style="width: 100%">
 		  <tr>
-			<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>»ç¿ëÀÚ °ü¸® - »ç¿ëÀÚ ¼öÁ¤</b></td>
+			<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>ì‚¬ìš©ìž ê´€ë¦¬ - ì‚¬ìš©ìž ìˆ˜ì •</b></td>
 		  </tr>
 	    </table>  
 	    <br>
 	  
 	    <table style="background-color: YellowGreen">
 	  	  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">»ç¿ëÀÚID</td>
+			<td width="150" align="center" bgcolor="E6ECDE">ì‚¬ìš©ìžID</td>
 			<td width="250" bgcolor="ffffff" style="padding-left: 10">
 				<%= user.getUserId() %>
 			</td>
 		  </tr>
 		  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">ºñ¹Ð¹øÈ£</td>
+			<td width="150" align="center" bgcolor="E6ECDE">ë¹„ë°€ë²ˆí˜¸</td>
 			<td width="250" bgcolor="ffffff" style="padding-left: 10">
 				<input type="password" style="width: 240" name="password" value="<%= user.getPassword() %>">
 			</td>
 		  </tr>
 		  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">ºñ¹Ð¹øÈ£ È®ÀÎ</td>
+			<td width="150" align="center" bgcolor="E6ECDE">ë¹„ë°€ë²ˆí˜¸ í™•ì¸</td>
 			<td width="250" bgcolor="ffffff" style="padding-left: 10">
 				<input type="password" style="width: 240" name="password2" value="<%= user.getPassword() %>">
 			</td>
 		  </tr>
 		  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">ÀÌ¸§</td>
+			<td width="150" align="center" bgcolor="E6ECDE">ì´ë¦„</td>
 			<td width="250" bgcolor="ffffff" style="padding-left: 10">
 				<input type="text" style="width: 240" name="name" value="<%= user.getName() %>">
 			</td>
 		  </tr>
 		  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">ÀÌ¸ÞÀÏ ÁÖ¼Ò</td>
+			<td width="150" align="center" bgcolor="E6ECDE">ì´ë©”ì¼ ì£¼ì†Œ</td>
 			<td width="250" bgcolor="ffffff" style="padding-left: 10">
 				<input type="text" style="width: 240" name="email" value="<%= user.getEmail() %>">
 			</td>
 		  </tr>	
 		  <tr height="40">
-			<td width="150" align="center" bgcolor="E6ECDE">ÀüÈ­¹øÈ£</td>
+			<td width="150" align="center" bgcolor="E6ECDE">ì „í™”ë²ˆí˜¸</td>
 			<td width="250" bgcolor="ffffff" style="padding-left: 10">
 				<input type="text" style="width: 240" name="phone" value="<%= user.getPhone() %>">
 			</td>
@@ -84,8 +84,8 @@ function userList() {
 	    <table style="width: 100%">
 		  <tr>
 			<td align="left">
-			<input type="button" value="¼öÁ¤" onClick="userModify()"> &nbsp;
-			<input type="button" value="¸ñ·Ï" onClick="userList()">
+			<input type="button" value="ìˆ˜ì •" onClick="userModify()"> &nbsp;
+			<input type="button" value="ëª©ë¡" onClick="userList()">
 			</td>
 		  </tr>
 	    </table>

@@ -4,7 +4,7 @@
 		auth = "Container"
 		driverClassName = "oracle.jdbc.driver.OracleDriver"
 		type="javax.sql.DataSource"
-		url="jdbc:oracle:thin:@202.20.119.117:1521:orcl"
+		url="jdbc:oracle:thin:@dblab.dongduk.ac.kr:1521:orcl" 
 		username="dbp"
 		password="dbp"
 		maxActive="20"
