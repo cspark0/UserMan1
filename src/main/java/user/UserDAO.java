@@ -20,7 +20,7 @@ public class UserDAO {
 	
 	public UserDAO() throws Exception {
 			Context init = new InitialContext();
-			ds = (DataSource)init.lookup("java:comp/env/jdbc/OracleDB");
+			ds = (DataSource)init.lookup("java:comp/env/jdbc/OracleDS");
 	}	
 	/**
 	 * USERINFO 테이블에 새로운 사용자 생성.
